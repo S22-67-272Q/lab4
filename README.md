@@ -432,11 +432,12 @@ a. Try the following examples, to check how the esacape sequences work in practi
 
 
 9. **Ruby destructive methods**
-All ruby methods that end with the exclamation mark, for example, `downcase!` or `capitalize!` are called **destructive methods **( also mutator methods, dangerous methods). 
 
-The usual methods perform an action on a copy of the object and then return copy, Destructive methods perform an action and change the object itself, returning the modified object as a result.
-
-Check the examples belwo
+	All ruby methods that end with the exclamation mark, for example, `downcase!` or `capitalize!` are called **destructive methods **( also mutator methods, dangerous methods). 
+	
+	The usual methods perform an action on a copy of the object and then return copy, Destructive methods perform an action and change the object itself, returning the modified object as a result.
+	
+	Check the examples below.
 
 	str="i AM arthur, king of the britons"
 	puts str.capitalize # this will not change the value of the object str
@@ -445,9 +446,9 @@ Check the examples belwo
 	str.capitalize! # this will print the modified str object
 	puts str # prints I am arthur, king of the britons
 
-`capitalize!` is Equivalent to:
+	`capitalize!` is Equivalent to:
 
-	str=str.capitalize
+		str=str.capitalize
 	
 - - -
 # <span class="mega-icon mega-icon-issue-opened"></span> Stop
