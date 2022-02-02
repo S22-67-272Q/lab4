@@ -68,9 +68,9 @@ This part of the lab will get everyone familiar with some Ruby basics and provid
   return "Temperature must be an integer" unless temp.class == Integer
   ``` 
 
-	Rerun these tests after adding this line.  If the tests pass, add the revision to the git repository.
+ 	Rerun these tests after adding this line.  If the tests pass, add the revision to the git repository.
 
-	The Ruby `unless` statement xecutes code **if the condition is false**. If the condition is true, the code specified in the else clause is executed.
+   The Ruby `unless` statement xecutes code **if the condition is false**. If the condition is true, the code specified in the else clause is executed.
 	`unless` is the logical opposite of `if`.
 
  b. Ruby offers also conditional structures that are pretty common to modern languages. Let's check how we could solve the same using an `if` statement.
@@ -79,15 +79,15 @@ This part of the lab will get everyone familiar with some Ruby basics and provid
   	return "Temperature must be an integer" if temp.class != Integer
   ``` 
 
-
-	**Note:** Notice that if we want to return before the end of method, we need to use the return keyword, but if the method runs its course, the last value is automatically returned by the method.  Finally, notice the use of the inline If (where the the condition is placed at the end of the line).
+**Note:** Notice that if we want to return before the end of method, we need to use the return keyword, but if the method runs its course, the last value is automatically returned by the method.  Finally, notice the use of the inline If (where the the condition is placed at the end of the line).
 
 3. Add the test `puts convert(-500)` to the tests and rerun.  Of course, remembering your basic physics leaves you distressed at this point because you know this answer is in error – Absolute Zero is at –474 degrees Fahrenheit or -270 degrees Celsius, making this result impossible.  To make sure our program doesn't give silly answers, we will add another line after the last correction (and before the calculation): 
 
   ```ruby
   return "Temperature below Absolute Zero" if temp < -474 
   ```
-  Rerun the tests; assuming they pass, save the revision to the git repository.
+ 
+ Rerun the tests; assuming they pass, save the revision to the git repository.
   We call this an **inline if**. It is usually used in this format `<code if condition>` and used when only one condition is to be tested. It executes code if the condition is true.
 
 4. Of course, we have only half the temperature conversion problem – converting Fahrenheit to Celsius – and have no capability to convert Celsius to Fahrenheit.  Create a new branch in git called `exp` and switch to it.  Now in your code, add another argument called `measure` and using an `if ... else ... end` construct, correct the code so that either a Fahrenheit or Celsius temperature is converted.  Set up the `measure` argument so its default value is "F".  Add the test below:
@@ -99,7 +99,7 @@ This part of the lab will get everyone familiar with some Ruby basics and provid
   puts convert(-280, "C")
   ```
 
-	Rerun the code; if all tests pass, save to the repository.
+Rerun the code; if all tests pass, save to the repository.
 
 5. Looking at the results, we see that the code is still problematic: we get a result for –280 oC even though we know that value is below Absolute Zero.  There are a number of ways to correct this, but for learning purposes here, we are going to create a new method called `below_absolute_zero?` which has two arguments: `temp` and `measure`.  This method will simply return a boolean of `true` if the temperature for the measurement system is below the critical value; this is why this method will end in a question mark. Create the basic structure for this method now.
 
@@ -153,7 +153,7 @@ Looping in programming languages is a feature which clears the way for the execu
 
 1. Create a new Ruby file named `loops.rb` and add to it all the Ruby codes given in the next questions of this part (2 to 9).
 
-2. Lopping with `for`
+2. Looping with `for`
 
 		for variable_name in expression  
 		
@@ -187,7 +187,7 @@ Looping in programming languages is a feature which clears the way for the execu
 			     puts array[i]
 			end
 
-3. Lopping with while
+3. Looping with while
 
 The syntax of While loops is similar to Python with a small difference: the `end` at the end of the loop is mandatory
 
@@ -602,11 +602,19 @@ We could store that list in a string, for example separated by commas. Or we cou
 		
 		p grocery_list.last 
 
-6. **Array slicing**
-p grocery_list[0,3] # the syntax here is array[start_index, stop_index], the item at stop_index is not included
-p grocery_list.slice(0,3) # slice method takes to parameters: start index and how many items to consider.
+4. **Array slicing**
 
-7. **Removing items from arrays in Ruby**
+	a. Array Slicing in Ruby works exactly as for List slicing in Python using []
+	
+		p grocery_list[0,3]
+	
+	The syntax here is`array[start_index, stop_index]` where the the item at stop_index is not included
+	
+	b. we can also use the `slice` method that takes to parameters: (1) the start index and (2) how many items to consider.
+	
+		p grocery_list.slice(0,3) 
+		
+5. **Removing items from arrays in Ruby**
 puts "Grocery list before: #{grocery_list}"
 last_item= grocery_list.pop # the pop method deletes the last item in an array and returns it (the item)
 p last_item
@@ -617,7 +625,8 @@ first_item=grocery_list.shift # the shift method deletes the first item in an ar
 puts "Grocery list after removing the first item: #{grocery_list}"
 
 
-8. **Other array methods in Ruby**
+6. **Other array methods in Ruby**
+
 	a. to check if an array contains an item, we use either the `any?` or `include?` built-in predicate methods
 
 		p grocery_list.any?("potatoes") # this prints true
@@ -688,7 +697,7 @@ Under `irb`, Ruby will show the results of any Ruby statements you feed it witho
   a.day == b.day - 1
   ```
   
- 	and see that result as well. As we noted earlier in the temp conversion 	method, Ruby is evaluating these statements as either true or false and 	returning the result.
+ and see that result as well. As we noted earlier in the temp conversion method, Ruby is evaluating these statements as either true or false and returning the result.
   
 5. Use the `strftime` method to format the object `a` in the format of 99/99/9999.  To see the options with `strftime`, please refer to [strfti.me](http://strfti.me/).
 
